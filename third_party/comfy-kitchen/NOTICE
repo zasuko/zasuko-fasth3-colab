@@ -1,0 +1,147 @@
+このフォルダは、Comfy-Org/comfy-kitchen の成果物（ビルド済みwheel）を再配布するための
+ライセンス表示です。wheel本体は本リポジトリの Releases に添付しています。
+
+--------------------------------------------------------------------------------
+再配布しているもの
+--------------------------------------------------------------------------------
+成果物 : comfy_kitchen （Linux / CUDA ビルド済み wheel）
+出所   : https://github.com/Comfy-Org/comfy-kitchen
+取得元 : GitHub Actions ワークフロー実行 #33281832369 の成果物 `wheels-linux-cuda-hip`
+         （コミット dae00a13d458876570804523ae045a487fd92961 = Pull Request #117
+           "feat: Add int8 Sol-attention (CORE-391)" のマージコミット）
+ライセンス : Apache License 2.0（同フォルダの LICENSE を参照）
+改変   : 一切していません。CIが生成したファイルをそのまま再配布しています。
+
+再配布ファイルと SHA-256:
+  comfy_kitchen-0.2.31-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
+    34DE5D80F6B26CA679E6976D8C50F9277B9F14B8E600AE82CE9AC605EE32AD97
+  comfy_kitchen-0.2.31-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
+    3A445ED3984E225B13B1ADCE77353694E5074F0E606C09965453FC50A5D3EF15
+  comfy_kitchen-0.2.31-cp312-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
+    20BC6C7610477E14A128DAA661F272F2693DEA60CA7C7781B7FB6A36694F7675
+    （abi3形式のため Python 3.12 以上で使えます）
+
+--------------------------------------------------------------------------------
+なぜ再配布しているか
+--------------------------------------------------------------------------------
+このwheelに含まれる Sol-Attention 実装は 2026-08-29 に本家へマージされましたが、
+PyPI の最新版（0.2.31 / 2026-08-13 公開）にはまだ含まれていません。
+GitHub Actions の成果物はダウンロードに GitHub へのログインが必要なため、
+Google Colab から直接取得できません。
+Apache License 2.0 が再配布を認めているため、取得しやすい形で再配布しています。
+
+正式版が PyPI に公開されたら、本リポジトリからの配布は取りやめ、
+`pip install comfy-kitchen` に切り替えてください。
+
+================================================================================
+以下は上流 Comfy-Org/comfy-kitchen の NOTICE 原文です。
+================================================================================
+
+ComfyKitchen
+
+Copyright (c) 2025 Comfy Org. All rights reserved.
+
+This product includes software developed at NVIDIA CORPORATION.
+
+================================================================================
+
+This software uses the following third-party libraries:
+
+--------------------------------------------------------------------------------
+NVIDIA CUDA Runtime (cudart)
+--------------------------------------------------------------------------------
+Copyright (c) 1993-2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+License: NVIDIA CUDA Toolkit End User License Agreement (EULA)
+Website: https://developer.nvidia.com/cuda-toolkit
+
+This software statically links and redistributes the NVIDIA CUDA Runtime library
+(cudart_static) in accordance with the NVIDIA CUDA Toolkit EULA. The full license
+is available at: https://docs.nvidia.com/cuda/eula/index.html
+
+NVIDIA permits redistribution of the CUDA runtime libraries as part of applications
+that use the CUDA toolkit, provided that proper attribution is included.
+
+--------------------------------------------------------------------------------
+PyTorch
+--------------------------------------------------------------------------------
+Copyright (c) 2016-present, Meta Platforms, Inc. and PyTorch contributors
+License: BSD-3-Clause
+Website: https://pytorch.org/
+
+PyTorch is used as a runtime dependency for tensor operations.
+
+--------------------------------------------------------------------------------
+nanobind
+--------------------------------------------------------------------------------
+Copyright (c) 2022 Wenzel Jakob <wenzel.jakob@epfl.ch>
+License: BSD-3-Clause
+Website: https://github.com/wjakob/nanobind
+
+nanobind is used at build time to create Python bindings for C++/CUDA code.
+
+--------------------------------------------------------------------------------
+FlashAttention
+--------------------------------------------------------------------------------
+Copyright (c) 2022, the respective contributors, as shown by the AUTHORS file.
+License: BSD-3-Clause
+Website: https://github.com/Dao-AILab/flash-attention
+
+The fixed-cache decode kernel uses FlashAttention 2.7.4.
+
+--------------------------------------------------------------------------------
+PyTorch AO (torchao)
+--------------------------------------------------------------------------------
+Copyright (c) Meta Platforms, Inc. and affiliates.
+License: BSD-3-Clause
+Website: https://github.com/pytorch/ao
+
+Portions of the following files are derived from PyTorch AO:
+
+- comfy_kitchen/backends/eager/quantization.py
+  Source: https://github.com/pytorch/ao/blob/main/torchao/prototype/mx_formats/nvfp4_tensor.py
+
+- comfy_kitchen/float_utils.py (_f32_to_floatx_unpacked, _floatx_unpacked_to_f32)
+  Source: https://github.com/pytorch/ao/blob/main/torchao/prototype/mx_formats/custom_cast.py
+
+BSD 3-Clause License:
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+   may be used to endorse or promote products derived from this software without
+   specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+--------------------------------------------------------------------------------
+SageAttention
+--------------------------------------------------------------------------------
+Copyright (c) 2024 by SageAttention team.
+License: Apache-2.0
+Website: https://github.com/thu-ml/SageAttention
+
+Portions of the CUDA attention and quantization kernels under
+comfy_kitchen/backends/cuda/sage_attention/ are derived from SageAttention
+commit d1a57a546c3d395b1ffcbeecc66d81db76f3b4b5.
+
+================================================================================
+
+For full license texts of these dependencies, please refer to their respective
+project repositories or installation directories.

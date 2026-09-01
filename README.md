@@ -47,7 +47,7 @@ FastH3 はモデルの合計が **約 44GB** あります。
 
 ## 使い方
 
-1. `notebooks/` の中から使いたい方を開く
+1. リポジトリ内の `.ipynb` から、使いたい方を開く（`Driveレス版` / `Drive常駐版`）
 2. Colab で「ランタイムのタイプを変更」→ **L4 または A100** を選ぶ
 3. セルを上から順に実行する
 4. 実行ログに出る青い「ComfyUIを開く」ボタンをクリックする
@@ -138,7 +138,7 @@ RTX 4090（VRAM 24GB）での実測値です。Colab の GPU では異なりま�
 | --- | --- | --- |
 | MiniMax H3 の重み | [MiniMax H3 Community License](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE) | **日本は適用地域**。米・EU・英・韓は除外地域。商用UIには `MiniMax H3` の表示が必要 |
 | ComfyUI | GPL-3.0 | Notebook 内でクローン |
-| comfy-kitchen | Apache-2.0 | **本リポジトリの Releases で再配布**（`third_party/comfy-kitchen/` に LICENSE と NOTICE） |
+| comfy-kitchen | Apache-2.0 | **本リポジトリの [Releases](https://github.com/zasuko/zasuko-fasth3-colab/releases/tag/comfy-kitchen-solattn) で再配布**しています。ライセンス全文と出所は [`third_party/comfy-kitchen/`](third_party/comfy-kitchen/) にあります |
 | FastH3 の重み（[Kijai/MiniMax-H3-experimental](https://huggingface.co/Kijai/MiniMax-H3-experimental)） | **表記なし** | Hugging Face から直接ダウンロード。**再配布しません** |
 | `sol_attn_minimax_v5.py` | **表記なし** | PR の添付ファイルから直接ダウンロード。**再配布しません** |
 | ワークフロー JSON | **表記なし** | [sepiablue-ai/minimax_h3_workflows](https://github.com/sepiablue-ai/minimax_h3_workflows) から直接ダウンロード。**再配布しません** |
