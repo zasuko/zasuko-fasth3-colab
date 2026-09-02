@@ -9,8 +9,8 @@ AIみちくさチャンネルのメンバーシップ特典として配布して
 
 | Notebook | 必要なDrive容量 | 開く |
 | --- | --- | --- |
-| **Driveレス版**（毎回ダウンロード） | **不要** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/FastH3_Colab_Driveless.ipynb) |
-| **Drive常駐版**（2回目以降が速い） | **44GB以上** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/FastH3_Colab_DriveSaved.ipynb) |
+| **Driveレス版**（毎回ダウンロード） | **不要** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/%F0%9F%8C%B1%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC%E3%82%B7%E3%83%83%E3%83%97%E7%89%B9%E5%85%B8_FastH3_%E3%81%96%E3%81%99%E3%81%93%E5%BC%8F_Notebook_Drive%E3%83%AC%E3%82%B9%E7%89%88_20260901.ipynb) |
+| **Drive常駐版**（2回目以降が速い） | **44GB以上** | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/%F0%9F%8C%B1%E3%83%A1%E3%83%B3%E3%83%90%E3%83%BC%E3%82%B7%E3%83%83%E3%83%97%E7%89%B9%E5%85%B8_FastH3_%E3%81%96%E3%81%99%E3%81%93%E5%BC%8F_Notebook_Drive%E5%B8%B8%E9%A7%90%E7%89%88_20260901.ipynb) |
 
 > 開く前に、下の「⚠️ 最初に読んでください」を必ず確認してください。
 > **GPUは L4 か A100 を選ぶ必要があります**（無料枠のT4では高速化が効きません）。
