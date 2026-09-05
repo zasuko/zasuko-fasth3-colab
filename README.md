@@ -104,6 +104,27 @@ FastH3 は **4ステップ専用**に訓練されています。増やしても�
 
 `ManualSigmas` の値も固定です: `0.9999166, 0.9728326, 0.9230769, 0.8, 0.0`
 
+### サンプル画像について
+
+起動セルが `samples/` の画像を ComfyUI の `input` フォルダへ落とします。
+**すべて架空のキャラクター・人物です。実在の人物ではありません。**
+
+| ファイル | 種類 | 向いている使い方 |
+| --- | --- | --- |
+| `charsheet_anime_hoodie_boy.png` | アニメ調のキャラクターシート | R2V（既定の参照画像） |
+| `charsheet_anime_vtuber_rion.png` | アニメ調・配色見本つき | R2V |
+| `charsheet_anime_maid_girl.png` | アニメ調 | R2V |
+| `charsheet_photo_mascot_cat.png` | 実写調・着ぐるみ | R2V |
+| `charsheet_photo_man_glasses.png` | 実写調 | R2V |
+| `charsheet_photo_woman_pink.png` | 実写調 | R2V |
+| `portrait_photo_man_a.png` | バストアップ | I2V の起点画像 |
+| `portrait_photo_man_b.png` | バストアップ | I2V の起点画像（既定） |
+
+キャラクターシートは **FRONT / SIDE / BACK / BAST UP** が並んだ形式です。
+**R2V の参照画像は、この形式のまま渡して問題ありません**（見出し文字が入っていても大丈夫）。
+一方 **I2V の起点画像には向きません**。1フレーム目にそのまま出てしまうので、
+バストアップの単体画像を使ってください。
+
 ### ワークフローは4種類あります
 
 起動セルが `Workflows > User workflows > FastH3` に置きます。
