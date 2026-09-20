@@ -1,3 +1,43 @@
+# FastH3 Colab：V2＋新VAE追加版
+
+2026-09-20：既存のColab Notebookをベースに、**FastH3 V2（8ステップ）＋新INT8映像VAE**版を追加しました。
+
+| 新しいNotebook | 保存方式 | 起動 |
+|---|---|---|
+| V2＋新VAE Driveレス | モデルはColabの一時ディスクへ毎回ダウンロード。Drive不要 | [Colabで開く](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/FastH3_V2_NewVAE_Colab_Driveless.ipynb) |
+| V2＋新VAE Drive保存 | モデルをDriveに保存して再利用。約42GB＋余裕が必要 | [Colabで開く](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/FastH3_V2_NewVAE_Colab_DriveSaved.ipynb) |
+
+使い方：新しいColabランタイムでL4 / A100 / H100 / G4系などを選択し、従来どおり`PINGGY_TOKEN`をシークレットに登録して起動セルを実行します。ComfyUI内の`FastH3_V2_newVAE`に4種類のワークフローがあります。R2Vアプリ版は最初の負荷を抑えるため0.4MP・5秒設定です。
+
+V2版はComfyUI v0.36.0の標準BlockSparseAttention、comfy-kitchen 0.2.34を使います。旧暫定ノードや専用wheelは不要です。動画shift 10・音声shift 3・VSA保持率20%・8ステップの設定を同梱しました。
+
+**検証範囲：Notebook形式・Python構文・ワークフローの接続・設定をローカル確認済み。新NotebookのColabでのインストール／接続／動画生成は未検証です。** 同モデルと新VAEのローカルRTX 4090環境では1344×768・8秒・参照7枚の生成に成功しています。Colabでの速度や動作保証ではありません。I2V/R2Vは実験的です。
+
+[V2版の設定・配布元・ライセンス](notebooks/FastH3_V2_NewVAE_README.md)
+
+---
+
+
+## H100・G4系への対応（2026-09-20追記）
+
+L4/A100だけを許す名前判定を廃止し、実際のGPUの計算世代（Compute Capability 8.0以上）と搭載メモリ（約24GB以上を想定、22GiB未満は停止）で確認します。H100（9.0）とRTX PRO 6000 Blackwell（12.0、Google CloudのG4系）も、この条件を満たせば先へ進みます。T4（7.5）は停止します。
+
+起動時に実GPU名・メモリ・CUDA情報を表示し、PyTorchの小さな行列計算とcomfy-kitchenのCUDA sparse attention計算を実行します。失敗時はモデルを大量ダウンロードする前に止めます。GPU名だけを追加して計算できたことにする実装ではありません。
+
+24GB級では従来の省メモリ起動設定を使用し、より大きなメモリのGPUでは標準起動にします。解像度や長さを勝手に増やしません。G4/H100の割り当てはColab側の提供状況によります。
+
+**H100/G4上でのNotebook全体の実機生成テストは未実施です。** 機種ごとのCUDAドライバや配布ライブラリの組み合わせも起動時テストで確認してください。この確認を通っても、長尺・高解像度のメモリ不足や全モデルの互換性までは保証しません。
+
+出典：
+- [NVIDIA GPU計算世代一覧](https://developer.nvidia.com/cuda/gpus)
+- [Google Cloud G4の仕様](https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines)
+- [comfy-kitchen 0.2.34](https://github.com/Comfy-Org/comfy-kitchen/tree/v0.2.34)
+- [Colab公式FAQ](https://research.google.com/colaboratory/faq.html)
+
+## 従来のV1（4ステップ）版の記録
+
+以下は従来版の手順・測定記録です。V2版のステップ数・必要部品・速度の説明ではありません。
+
 # zasuko-fasth3-colab
 
 MiniMax H3 の高速版 **FastH3**（4ステップ蒸留＋VSA）を Google Colab で動かすための Notebook 一式です。
