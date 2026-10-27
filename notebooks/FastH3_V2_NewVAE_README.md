@@ -1,4 +1,6 @@
-# FastH3 V2＋新INT8 VAE版
+# FastH3 V2＋INT8映像VAE（int8_convrot）版
+
+映像VAEは Comfy-Org/MiniMax-H3 が2026-09-15に公開した `minimax_h3_video_vae_int8_convrot.safetensors` です（元のNotebookの `minimax_h3_video_vae_fp16` に代わるもの。ファイル名やワークフロー名の「NewVAE」はこれを指します）。
 
 元のFastH3 Colab Notebookを基にした追加版です。**8ステップのV2モデル**と、映像を変換する**INT8 VAE**をセットで使います。
 元の4ステップ版とは別Notebookです。元版のランタイムを流用せず、新しいランタイムで開始してください。
