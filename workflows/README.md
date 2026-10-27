@@ -1,6 +1,6 @@
 # FastH3 V2＋INT8映像VAE（int8_convrot） アプリ版ワークフロー集
 
-映像VAEは Comfy-Org/MiniMax-H3 が2026-09-15に公開した `minimax_h3_video_vae_int8_convrot.safetensors` です（元のNotebookの `minimax_h3_video_vae_fp16` に代わるもの。ファイル名やワークフロー名の「NewVAE」はこれを指します）。
+映像VAEは Comfy-Org/MiniMax-H3 が2026-09-15に公開した `minimax_h3_video_vae_int8_convrot.safetensors` です（元のNotebookの `minimax_h3_video_vae_fp16` に代わるもの。ワークフロー名の「NewVAE」はこれを指します。Notebookのファイル名は2026-10-27に「INT8VAE」へ改めました）。
 
 利用したい方式のJSONをComfyUIへドラッグ＆ドロップするか、Workflowの「開く」から読み込みます。API形式ではなく、画面から読み込むUI形式です。
 
