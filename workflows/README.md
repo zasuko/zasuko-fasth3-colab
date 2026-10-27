@@ -1,4 +1,6 @@
-# FastH3 V2＋新VAE アプリ版ワークフロー集
+# FastH3 V2＋INT8映像VAE（int8_convrot） アプリ版ワークフロー集
+
+映像VAEは Comfy-Org/MiniMax-H3 が2026-09-15に公開した `minimax_h3_video_vae_int8_convrot.safetensors` です（元のNotebookの `minimax_h3_video_vae_fp16` に代わるもの。ファイル名やワークフロー名の「NewVAE」はこれを指します）。
 
 利用したい方式のJSONをComfyUIへドラッグ＆ドロップするか、Workflowの「開く」から読み込みます。API形式ではなく、画面から読み込むUI形式です。
 
@@ -22,7 +24,7 @@ V2はT2V向けの蒸留モデルです。I2V/FLF2V/R2Vは実験的な使用で�
 
 ## 操作
 
-1. V2＋新VAEのColab Notebookを起動します。
+1. V2＋INT8映像VAEのColab Notebookを起動します。
 2. このJSONをComfyUIに読み込みます。アプリ表示が出ない場合はアプリモードへ切り替えます。
 3. 縦横比、解像度、長さ、方式に応じた画像、プロンプトを指定して実行します。
 4. 初期値は0.4MP・5秒。1.0MPも選べます。参照素材に権利を持つ画像を使用してください。
@@ -50,4 +52,4 @@ ComfyUI v0.36.0、comfy-kitchen 0.2.34。暫定SolAttnMiniMaxノードは不要�
 [Notebookと起動リンク](https://github.com/zasuko/zasuko-fasth3-colab)
 [モデル配布元](https://huggingface.co/FastVideo/FastVideo-FastH3-Comfy)
 
-同じV2＋新VAEのAPI構成はローカルRTX 4090とColab G4で生成済みです。本アプリ版はColabのComfyUIで読み込み、アプリ表示・入力6項目・解像度5種類を確認済みです。この見本プロンプトでの生成試験は未実施です。モデルの地域・用途等の条件は[MiniMax H3ライセンス](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE)を参照してください。
+同じV2＋INT8映像VAEのAPI構成はローカルRTX 4090とColab G4で生成済みです。本アプリ版はColabのComfyUIで読み込み、アプリ表示・入力6項目・解像度5種類を確認済みです。この見本プロンプトでの生成試験は未実施です。モデルの地域・用途等の条件は[MiniMax H3ライセンス](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE)を参照してください。
