@@ -1,12 +1,12 @@
 # FastH3 Colab：V2＋INT8映像VAE（int8_convrot）追加版
 
 2026-09-20：既存のColab Notebookをベースに、**FastH3 V2（8ステップ）＋INT8映像VAE**（int8_convrot）版を追加しました。
-映像VAEは Comfy-Org/MiniMax-H3 が2026-09-15に公開した `minimax_h3_video_vae_int8_convrot.safetensors` です（元のNotebookの `minimax_h3_video_vae_fp16` に代わるもの。ファイル名やワークフロー名の「NewVAE」はこれを指します）。
+映像VAEは Comfy-Org/MiniMax-H3 が2026-09-15に公開した `minimax_h3_video_vae_int8_convrot.safetensors` です（元のNotebookの `minimax_h3_video_vae_fp16` に代わるもの。ワークフロー名の「NewVAE」はこれを指します。Notebookのファイル名は2026-10-27に「INT8VAE」へ改めました）。
 
 | 新しいNotebook | 保存方式 | 起動 |
 |---|---|---|
-| V2＋INT8映像VAE Driveレス | モデルはColabの一時ディスクへ毎回ダウンロード。Drive不要 | [Colabで開く](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/FastH3_V2_NewVAE_Colab_Driveless.ipynb) |
-| V2＋INT8映像VAE Drive保存 | モデルをDriveに保存して再利用。約42GB＋余裕が必要 | [Colabで開く](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/FastH3_V2_NewVAE_Colab_DriveSaved.ipynb) |
+| V2＋INT8映像VAE Driveレス | モデルはColabの一時ディスクへ毎回ダウンロード。Drive不要 | [Colabで開く](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/FastH3_V2_INT8VAE_Colab_Driveless.ipynb) |
+| V2＋INT8映像VAE Drive保存 | モデルをDriveに保存して再利用。約42GB＋余裕が必要 | [Colabで開く](https://colab.research.google.com/github/zasuko/zasuko-fasth3-colab/blob/main/notebooks/FastH3_V2_INT8VAE_Colab_DriveSaved.ipynb) |
 
 使い方：新しいColabランタイムでL4 / A100 / H100 / G4系などを選択し、起動セルを実行します。Pinggyの有料トークンがあれば`PINGGY_TOKEN`をシークレットに登録します（無い場合は無料のPinggyで、1回60分まで接続します）。ComfyUI内の`FastH3_V2_newVAE`に4種類のワークフローがあります。R2Vアプリ版は最初の負荷を抑えるため0.4MP・5秒設定です。
 
@@ -14,7 +14,7 @@ V2版はComfyUI v0.36.0の標準BlockSparseAttention、comfy-kitchen 0.2.34を�
 
 **検証範囲：Notebook形式・Python構文・ワークフローの接続・設定をローカル確認済み。新NotebookのColabでのインストール／接続／動画生成は未検証です。** 同モデルとINT8映像VAEのローカルRTX 4090環境では1344×768・8秒・参照7枚の生成に成功しています。Colabでの速度や動作保証ではありません。I2V/R2Vは実験的です。
 
-[V2版の設定・配布元・ライセンス](notebooks/FastH3_V2_NewVAE_README.md)
+[V2版の設定・配布元・ライセンス](notebooks/FastH3_V2_INT8VAE_README.md)
 
 ---
 
